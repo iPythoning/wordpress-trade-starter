@@ -1,5 +1,9 @@
 # WordPress Trade Starter
 
+[![Clawhub](https://img.shields.io/badge/Clawhub-wordpress--trade--site-blue)](https://clawhub.ai/ipythoning/wordpress-trade-site)
+
+**English | [中文](README.zh-CN.md)**
+
 > Production-ready WordPress template for international trade businesses. Docker-based, performance-optimized, multilingual-ready.
 
 ```
@@ -32,6 +36,16 @@
 - **Multilingual** — Polylang for multi-language support (EN/ZH/RU/ES/...)
 - **Security hardened** — HTTPS everywhere, file editor disabled, Cloudflare WAF
 - **Production-tested** — Battle-tested on a real B2B semi-trailer manufacturer site
+
+## AI-Guided Setup (via OpenClaw)
+
+Install the Clawhub skill and let an AI agent guide you through the entire process interactively:
+
+```bash
+clawhub install wordpress-trade-site
+```
+
+Then tell your OpenClaw agent: **"帮我建一个外贸独立站"** — it will walk you through 9 phases from server setup to final verification.
 
 ## Quick Start (5 minutes)
 

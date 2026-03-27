@@ -1,6 +1,8 @@
 # WordPress 外贸独立站一键部署模板
 
-[English](README.md) | 中文
+[![Clawhub](https://img.shields.io/badge/Clawhub-wordpress--trade--site-blue)](https://clawhub.ai/ipythoning/wordpress-trade-site)
+
+**[English](README.md) | 中文**
 
 > 面向外贸企业的 WordPress 独立站生产级模板。Docker 一键部署，性能优化，多语言开箱即用。
 
@@ -35,6 +37,30 @@
 - **安全加固** — 全站 HTTPS、禁用文件编辑器、Cloudflare WAF
 - **实战验证** — 已在真实的 B2B 半挂车制造商网站上验证
 
+## AI 引导式部署（通过 OpenClaw）
+
+安装 Clawhub 技能，AI Agent 交互式引导你完成 9 个阶段的全流程部署：
+
+```bash
+clawhub install wordpress-trade-site
+```
+
+安装后告诉你的 OpenClaw Agent：**"帮我建一个外贸独立站"** — 它会从服务器准备一路引导到最终验收。
+
+| 阶段 | 内容 | 耗时 |
+|------|------|------|
+| 1. 业务信息收集 | 公司名称、产品、目标市场、语言、联系方式 | 2 min |
+| 2. 服务器准备 | SSH 连接、防火墙、swap、时区 | 5 min |
+| 3. Docker 部署 | Clone 模板、生成 .env、启动三容器 | 3 min |
+| 4. SSL 证书 | Let's Encrypt 或 Cloudflare Origin 证书 | 3 min |
+| 5. WordPress 初始化 | 安装向导、wp-config、Permalinks | 3 min |
+| 6. 主题与插件 | Astra + 9 款推荐插件批量安装 | 5 min |
+| 7. 多语言 + SEO | Polylang 多语言、Rank Math SEO、基础页面 | 5 min |
+| 8. Cloudflare + 性能 | DNS、SSL/TLS、三层缓存、PageSpeed 测试 | 5 min |
+| 9. 安全加固 + 验收 | 文件权限、xmlrpc 封堵、备份、监控 | 5 min |
+
+**约 35 分钟**，从零到生产就绪。
+
 ## 快速开始（5 分钟）
 
 ### 前置条件
@@ -52,6 +78,10 @@ sudo bash setup.sh
 ```
 
 完成后打开 `https://你的域名/wp-admin` 进行 WordPress 初始化设置。
+
+### 手动部署
+
+如果你希望手动控制每个步骤，参见 [docs/02-docker-deploy.md](docs/02-docker-deploy.md)。
 
 ## 文档目录
 
@@ -73,16 +103,16 @@ sudo bash setup.sh
 
 | 插件 | 用途 | 免费？ |
 |------|------|--------|
-| Astra | 轻量主题，兼容 Elementor | 是 |
-| Elementor | 可视化页面构建器 | 部分免费 |
-| Rank Math | SEO（站点地图、结构化数据、Meta） | 是 |
-| WP Super Cache | 页面缓存 | 是 |
-| Imagify | 图片优化 + WebP 转换 | 部分免费 |
-| Jetpack Boost | Critical CSS、懒加载 | 是 |
-| Polylang | 多语言内容管理 | 是 |
-| Contact Form 7 | 联系表单 | 是 |
-| Chaty | WhatsApp / 在线聊天小部件 | 部分免费 |
-| eCommerce Product Catalog | 产品展示（无需 WooCommerce） | 是 |
+| [Astra](https://wpastra.com/) | 轻量主题，兼容 Elementor | 是 |
+| [Elementor](https://elementor.com/) | 可视化页面构建器 | 部分免费 |
+| [Rank Math](https://rankmath.com/) | SEO（站点地图、结构化数据、Meta） | 是 |
+| [WP Super Cache](https://wordpress.org/plugins/wp-super-cache/) | 页面缓存 | 是 |
+| [Imagify](https://imagify.io/) | 图片优化 + WebP 转换 | 部分免费 |
+| [Jetpack Boost](https://jetpack.com/boost/) | Critical CSS、懒加载 | 是 |
+| [Polylang](https://polylang.pro/) | 多语言内容管理 | 是 |
+| [Contact Form 7](https://contactform7.com/) | 联系表单 | 是 |
+| [Chaty](https://premio.io/downloads/chaty/) | WhatsApp / 在线聊天小部件 | 部分免费 |
+| [eCommerce Product Catalog](https://implecode.com/) | 产品展示（无需 WooCommerce） | 是 |
 
 ## 性能数据
 
@@ -94,6 +124,19 @@ sudo bash setup.sh
 | TTFB | 1.8s | 0.3s |
 | LCP | 4.2s | 2.1s |
 | 页面总大小 | 3.2MB | 1.1MB |
+
+## 文件结构
+
+```
+├── docker-compose.yml    # Docker 编排（WordPress + MySQL + Nginx）
+├── nginx.conf            # Nginx：SSL、代理缓存、Gzip、WebP、Cloudflare
+├── .htaccess             # Apache：Super Cache、浏览器缓存、WebP、Gzip
+├── wp-config-extra.php   # wp-config.php 额外配置
+├── setup.sh              # 一键部署脚本
+├── .env.example          # 环境变量模板
+├── skill/                # OpenClaw Clawhub 技能
+└── docs/                 # 11 篇文档
+```
 
 ## 适用人群
 
