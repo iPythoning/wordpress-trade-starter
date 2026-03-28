@@ -33,6 +33,7 @@
 - **Triple-layer cache** — WP Super Cache + Nginx proxy cache + Cloudflare CDN
 - **Auto WebP** — Imagify converts images; Nginx/Apache serve WebP to supported browsers
 - **SEO-ready** — Rank Math with structured data, XML sitemap, Open Graph
+- **GEO-ready** — Generative Engine Optimization for AI search (Google AI Overviews, Perplexity, ChatGPT Search, Claude Web)
 - **Multilingual** — Polylang for multi-language support (EN/ZH/RU/ES/...)
 - **Security hardened** — HTTPS everywhere, file editor disabled, Cloudflare WAF
 - **Production-tested** — Battle-tested on a real B2B semi-trailer manufacturer site
@@ -97,6 +98,7 @@ If you prefer manual control, see [docs/02-docker-deploy.md](docs/02-docker-depl
 | [Jetpack Boost](https://jetpack.com/boost/) | Critical CSS, lazy loading | Yes |
 | [Polylang](https://polylang.pro/) | Multilingual content | Yes |
 | [Contact Form 7](https://contactform7.com/) | Contact forms | Yes |
+| [Flamingo](https://wordpress.org/plugins/flamingo/) | Store CF7 submissions in WP admin | Yes |
 | [Chaty](https://premio.io/downloads/chaty/) | WhatsApp/chat widget | Freemium |
 | [eCommerce Product Catalog](https://implecode.com/) | Product showcase (no WooCommerce) | Yes |
 
@@ -115,11 +117,13 @@ Tested on a 1-core / 1GB VPS with Cloudflare Free plan:
 
 ```
 ├── docker-compose.yml    # Docker orchestration (WordPress + MySQL + Nginx)
-├── nginx.conf            # Nginx: SSL, proxy cache, Gzip, WebP, Cloudflare
+├── nginx.conf            # Nginx: SSL, proxy cache, Gzip, WebP, Cloudflare, security headers
 ├── .htaccess             # Apache: Super Cache, browser cache, WebP, Gzip
 ├── wp-config-extra.php   # Extra wp-config.php snippets
 ├── setup.sh              # One-click deployment script
 ├── .env.example          # Environment variables template
+├── assets/
+│   └── geo-functions.php # GEO: AI search engine optimization (JSON-LD, robots.txt, meta)
 └── docs/                 # 11-part documentation
 ```
 

@@ -85,17 +85,23 @@ See [06-multilingual.md](06-multilingual.md)
 
 Create a contact form with: Name, Email, Phone, Country, Message, Product Interest.
 
-### 8. Chaty (Chat Widget)
+### 8. Flamingo (CF7 Storage)
+
+**Critical:** Contact Form 7 does NOT store submissions by default — it only sends emails. If your email server fails or the recipient address is misconfigured, **all inquiries are permanently lost**.
+
+Install [Flamingo](https://wordpress.org/plugins/flamingo/) alongside CF7. It automatically saves every form submission to the WordPress database. View all inquiries in WP Admin → Flamingo → Inbound Messages.
+
+### 9. Chaty (Chat Widget)
 
 Add a floating WhatsApp/Email button. Configure your WhatsApp business number.
 
-### 9. eCommerce Product Catalog
+### 10. eCommerce Product Catalog
 
 Lightweight product showcase without WooCommerce overhead. Good for B2B catalog-style sites.
 
 ## Plugin Performance Note
 
-Only install plugins you actually use. Each plugin adds overhead. The 9 plugins above are carefully selected to balance functionality and performance.
+Only install plugins you actually use. Each plugin adds overhead. The 10 plugins above are carefully selected to balance functionality and performance.
 
 ## Next Step
 

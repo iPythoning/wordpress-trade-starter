@@ -78,9 +78,33 @@ curl -X POST "https://api.cloudflare.com/client/v4/zones/ZONE_ID/purge_cache" \
 ## Security
 
 - **Security Level**: Medium
-- **Bot Fight Mode**: ON
+- **Bot Fight Mode**: ON (for regular bots)
 - **Browser Integrity Check**: ON
 - **Hotlink Protection**: ON (prevents others from embedding your images)
+
+### AI Bots: Allow, Don't Block
+
+**Critical for GEO (Generative Engine Optimization)**: Cloudflare's "AI Scrapers and Crawlers" feature blocks AI search engine bots by default. If you want your site to appear in AI-generated answers (Google AI Overviews, Perplexity, ChatGPT Search, Claude Web, Bing Copilot), you **must** allow these bots:
+
+1. Cloudflare Dashboard → Security → Bots
+2. Turn **OFF** "AI Scrapers and Crawlers" blocking
+3. Or create custom WAF rules to selectively allow:
+
+| Bot | User-Agent | Source |
+|-----|-----------|--------|
+| GPTBot | `GPTBot` | OpenAI (ChatGPT Search) |
+| ChatGPT-User | `ChatGPT-User` | OpenAI browse mode |
+| Google-Extended | `Google-Extended` | Google AI Overviews |
+| PerplexityBot | `PerplexityBot` | Perplexity AI |
+| ClaudeBot | `ClaudeBot` | Anthropic (Claude Web) |
+| anthropic-ai | `anthropic-ai` | Anthropic training |
+| Bytespider | `Bytespider` | ByteDance AI |
+| cohere-ai | `cohere-ai` | Cohere AI |
+| CCBot | `CCBot` | Common Crawl |
+
+**Why this matters**: If AI bots can't crawl your site, your content will never appear in AI-generated answers — which is increasingly where B2B buyers start their research.
+
+See [07-seo-optimization.md](07-seo-optimization.md) for the full GEO setup guide.
 
 ## Performance Tips
 

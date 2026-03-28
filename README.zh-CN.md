@@ -54,7 +54,7 @@ clawhub install wordpress-trade-site
 | 3. Docker 部署 | Clone 模板、生成 .env、启动三容器 | 3 min |
 | 4. SSL 证书 | Let's Encrypt 或 Cloudflare Origin 证书 | 3 min |
 | 5. WordPress 初始化 | 安装向导、wp-config、Permalinks | 3 min |
-| 6. 主题与插件 | Astra + 9 款推荐插件批量安装 | 5 min |
+| 6. 主题与插件 | Astra + 10 款推荐插件批量安装 | 5 min |
 | 7. 多语言 + SEO | Polylang 多语言、Rank Math SEO、基础页面 | 5 min |
 | 8. Cloudflare + 性能 | DNS、SSL/TLS、三层缓存、PageSpeed 测试 | 5 min |
 | 9. 安全加固 + 验收 | 文件权限、xmlrpc 封堵、备份、监控 | 5 min |
@@ -111,6 +111,7 @@ sudo bash setup.sh
 | [Jetpack Boost](https://jetpack.com/boost/) | Critical CSS、懒加载 | 是 |
 | [Polylang](https://polylang.pro/) | 多语言内容管理 | 是 |
 | [Contact Form 7](https://contactform7.com/) | 联系表单 | 是 |
+| [Flamingo](https://wordpress.org/plugins/flamingo/) | CF7 表单提交存入后台（防丢失） | 是 |
 | [Chaty](https://premio.io/downloads/chaty/) | WhatsApp / 在线聊天小部件 | 部分免费 |
 | [eCommerce Product Catalog](https://implecode.com/) | 产品展示（无需 WooCommerce） | 是 |
 
