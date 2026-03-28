@@ -85,6 +85,7 @@ If you prefer manual control, see [docs/02-docker-deploy.md](docs/02-docker-depl
 | 09 | [Cloudflare](docs/09-cloudflare.md) | Cloudflare CDN configuration |
 | 10 | [Security](docs/10-security.md) | Security hardening checklist |
 | 11 | [Maintenance](docs/11-maintenance.md) | Daily operations and monitoring |
+| 12 | [GEO Optimization](docs/12-geo-optimization.md) | AI search engine optimization (citability, llms.txt, schema) |
 
 ## Recommended Plugin Stack
 

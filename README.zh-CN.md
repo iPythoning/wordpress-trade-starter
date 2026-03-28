@@ -98,6 +98,7 @@ sudo bash setup.sh
 | 09 | [Cloudflare](docs/09-cloudflare.md) | Cloudflare CDN 配置 |
 | 10 | [安全加固](docs/10-security.md) | 安全加固清单 |
 | 11 | [日常运维](docs/11-maintenance.md) | 日常维护与监控 |
+| 12 | [GEO 优化](docs/12-geo-optimization.md) | AI 搜索引擎优化（引用度、llms.txt、Schema） |
 
 ## 推荐插件
 

@@ -526,6 +526,69 @@ Target metrics:
 
 ---
 
+## Phase 8.5: GEO (Generative Engine Optimization)
+
+### 8.5a. Deploy GEO functions
+
+```bash
+# Copy GEO functions to child theme
+docker compose exec wordpress bash -c '
+curl -sL https://raw.githubusercontent.com/iPythoning/wordpress-trade-starter/main/assets/geo-functions.php \
+  -o /var/www/html/wp-content/themes/astra-child/geo-functions.php
+'
+```
+
+Add configuration to child theme's functions.php:
+
+```bash
+docker compose exec wordpress bash -c '
+cat >> /var/www/html/wp-content/themes/astra-child/functions.php << "GEO"
+
+// GEO Configuration
+define("GEO_SAMEAS", []);  // Add Wikipedia, LinkedIn, YouTube URLs later
+define("GEO_LANGUAGES", [${LANGUAGES_ARRAY}]);
+define("GEO_CONTACT_EMAIL", "${EMAIL}");
+define("GEO_CONTACT_PHONE", "${WHATSAPP}");
+require_once get_stylesheet_directory() . "/geo-functions.php";
+GEO
+'
+```
+
+AskUserQuestion: "Do you have profiles on these platforms? (We'll add them to your schema for AI recognition)" (multiSelect)
+- Wikipedia page
+- LinkedIn company page
+- YouTube channel
+- Twitter/X account
+- None yet — Skip
+
+For each selected platform, collect the URL and add to `GEO_SAMEAS` array.
+
+### 8.5b. Verify GEO deployment
+
+```bash
+# Check robots.txt has AI bots
+curl -s https://${DOMAIN}/robots.txt | grep -c "User-agent:"
+# Expected: 15+ entries (standard + AI tier 1 + tier 2 + SEO bots)
+
+# Check llms.txt auto-generation
+curl -s https://${DOMAIN}/llms.txt | head -5
+# Expected: "# COMPANY_NAME" followed by description
+
+# Check JSON-LD schema
+curl -s https://${DOMAIN}/ | grep -o '"@type":"[^"]*"' | sort -u
+# Expected: Organization, WebSite, BreadcrumbList
+```
+
+### 8.5c. Cloudflare AI bot access
+
+**Critical:** Cloudflare's "Managed robots.txt" blocks AI crawlers by default.
+
+Tell the user: Go to Cloudflare Dashboard → Security → Bots → **Disable "Managed robots.txt"**.
+
+Without this, all GEO work is nullified.
+
+---
+
 ## Phase 9: Security Hardening + Verification
 
 ### 9a. File permissions
@@ -627,6 +690,7 @@ Triple-layer cache active
 Database auto-backup configured
 xmlrpc.php blocked
 File permissions hardened
+GEO: robots.txt has AI bot tiers, llms.txt serving, JSON-LD schemas active
 
 Site URL:  https://${DOMAIN}
 Admin URL: https://${DOMAIN}/wp-admin
