@@ -231,9 +231,9 @@ add_filter('robots_txt', function ($output, $public) {
         $r .= "User-agent: {$bot}\nAllow: /\nAllow: /llms.txt\n# {$desc}\n\n";
     }
 
-    // Tier 3: Aggressive/low-value — BLOCK
-    $r .= "# === Tier 3: Aggressive Bots (BLOCK — high traffic, low value) ===\n";
-    $r .= "User-agent: Bytespider\nDisallow: /\n# TikTok/ByteDance crawler — aggressive, consumes resources\n\n";
+    // ByteDance / TikTok — allow (valuable for Chinese & international trade sites)
+    $r .= "# === ByteDance / TikTok ===\n";
+    $r .= "User-agent: Bytespider\nAllow: /\nAllow: /llms.txt\n# TikTok/Douyin/Toutiao ecosystem\n\n";
 
     // Rate-limit SEO bots
     $r .= "# === Rate-limit SEO bots ===\n";
