@@ -1,5 +1,9 @@
 # WordPress Trade Starter
 
+<!-- bmc:front -->
+<p align="center"><a href="https://buymeacoffee.com/dayongfan"><img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&amp;emoji=&amp;slug=dayongfan&amp;button_colour=FFDD00&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;coffee_colour=ffffff" alt="Buy me a coffee"></a></p>
+<!-- /bmc:front -->
+
 [![Clawhub](https://img.shields.io/badge/Clawhub-wordpress--trade--site-blue)](https://clawhub.ai/ipythoning/wordpress-trade-site)
 
 **English | [中文](README.zh-CN.md)**
@@ -69,6 +73,10 @@ That's it. Open `https://your-domain.com/wp-admin` to complete the WordPress set
 ### Manual Setup
 
 If you prefer manual control, see [docs/02-docker-deploy.md](docs/02-docker-deploy.md).
+
+<!-- bmc:middle -->
+<p align="center"><a href="https://buymeacoffee.com/dayongfan"><img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&amp;emoji=&amp;slug=dayongfan&amp;button_colour=FFDD00&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;coffee_colour=ffffff" alt="Buy me a coffee"></a></p>
+<!-- /bmc:middle -->
 
 ## Documentation
 
@@ -146,6 +154,6 @@ Issues and PRs welcome! Please see our documentation for the technical details.
 
 **Built with real-world experience from [TitanPuls.com](https://titanpuls.com)** — a semi-trailer manufacturer serving 50+ countries.
 
-## Support
-
-[![Buy me a coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=dayongfan&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://buymeacoffee.com/dayongfan)
+<!-- bmc:end -->
+<p align="center"><a href="https://buymeacoffee.com/dayongfan"><img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&amp;emoji=&amp;slug=dayongfan&amp;button_colour=FFDD00&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;coffee_colour=ffffff" alt="Buy me a coffee"></a></p>
+<!-- /bmc:end -->
